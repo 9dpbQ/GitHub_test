@@ -1,3 +1,15 @@
-<div style="text-align: right;">
-  <a href="README.md">English</a> | <a href="README.ja.md">日本語</a>
-</div>
+## Table of Contents
+- [English](#english)
+- [日本語](#日本語)
+
+---
+
+## English
+
+This is the English section.
+
+---
+
+## 日本語
+
+これは日本語のセクションです。
