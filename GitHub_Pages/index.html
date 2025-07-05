@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stapler mini - 令和のキーボードカスタマイズアプリ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <span data-lang="ja">Stapler mini</span>
+                    <span data-lang="en" class="hidden">Stapler mini</span>
+                </a>
+                <div class="controls">
+                    <div class="toggle-container">
+                        <span class="toggle-label-text">Ja</span>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="langToggle" class="toggle-input">
+                            <label for="langToggle" class="toggle-label">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <span class="toggle-label-text">En</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-background">
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Hero Background" class="hero-image">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span data-lang="ja">令和のキーボードカスタマイズアプリ</span>
+                        <span data-lang="en" class="hidden">21st Century Keyboard Customization App</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        <span data-lang="ja">直感的なUIで、あなたのキーボードを思い通りに。</span>
+                        <span data-lang="en" class="hidden">Customize your keyboard intuitively and freely.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 導入方法 Section -->
+        <section class="tutorial-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <span data-lang="ja">導入方法</span>
+                    <span data-lang="en" class="hidden">How to Start</span>
+                </h2>
+                <div class="steps">
+                    <!-- Step 1: Karabiner Elements -->
+                    <div class="step fade-in">
+                        <div class="step-content">
+                            <div class="step-header">
+                                <span class="step-number">01</span>
+                                <h3>
+                                    <span data-lang="ja">Karabiner Elementsをダウンロード</span>
+                                    <span data-lang="en" class="hidden">Download Karabiner Elements</span>
+                                </h3>
+                            </div>
+                            <p class="step-description">
+                                <span data-lang="ja">macOSで最強のキーボードカスタマイズツール。<br>必須の土台アプリです。</span>
+                                <span data-lang="en" class="hidden">The best keyboard customization tool for macOS. This is a required base app.</span>
+                            </p>
+                            <div class="accordion">
+                                <button class="accordion-toggle" data-target="karabiner-details">
+                                    <span data-lang="ja">Karabiner Elementsとは？</span>
+                                    <span data-lang="en" class="hidden">What is Karabiner Elements?</span>
+                                    <span class="accordion-icon">+</span>
+                                </button>
+                                <div class="accordion-content" id="karabiner-details">
+                                    <div class="accordion-inner">
+                                        <p>
+                                            <span data-lang="ja">Karabiner ElementsはmacOS用の高機能キーボードリマッパーです。キーの入れ替えや複雑なカスタマイズが可能です。</span>
+                                            <span data-lang="en" class="hidden">Karabiner Elements is a powerful keyboard remapper for macOS. It allows for advanced key remapping and customization.</span>
+                                        </p>
+                                        <a href="https://karabiner-elements.pqrs.org/" target="_blank" class="btn btn-secondary">
+                                            <span data-lang="ja">公式サイトへ</span>
+                                            <span data-lang="en" class="hidden">Official Site</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step-media">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80" alt="Karabiner Elements Screenshot">
+                        </div>
+                    </div>
+                    <!-- Step 2: Stapler mini -->
+                    <div class="step fade-in">
+                        <div class="step-content">
+                            <div class="step-header">
+                                <span class="step-number">02</span>
+                                <h3>
+                                    <span data-lang="ja">Stapler miniをダウンロード</span>
+                                    <span data-lang="en" class="hidden">Download Stapler mini</span>
+                                </h3>
+                            </div>
+                            <p class="step-description">
+                                <span data-lang="ja">直感的なUIでカスタマイズ。Karabiner Elementsと連携して使います。</span>
+                                <span data-lang="en" class="hidden">Customize with an intuitive UI. Works together with Karabiner Elements.</span>
+                            </p>
+                            <button class="btn btn-primary" id="downloadBtn" onclick="downloadLatestRelease()">
+                                <span data-lang="ja">📥 ダウンロード</span>
+                                <span data-lang="en" class="hidden">📥 Download</span>
+                            </button>
+                            <span id="versionInfo" class="version-info"></span>
+                            <div class="accordion">
+                                <button class="accordion-toggle" data-target="stapler-details">
+                                    <span data-lang="ja">Stapler miniとは？</span>
+                                    <span data-lang="en" class="hidden">What is Stapler mini?</span>
+                                    <span class="accordion-icon">+</span>
+                                </button>
+                                <div class="accordion-content" id="stapler-details">
+                                    <div class="accordion-inner">
+                                        <p>
+                                            <span data-lang="ja">Stapler miniはKarabiner Elementsの設定を直感的に編集できるmacOSアプリです。初心者でも簡単に使えます。</span>
+                                            <span data-lang="en" class="hidden">Stapler mini is a macOS app that lets you intuitively edit Karabiner Elements settings. Easy for beginners.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step-media">
+                            <video autoplay muted loop playsinline>
+                                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- どんなカスタマイズができるのか Section -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">
+                    <span data-lang="ja">どんなカスタマイズができるのか</span>
+                    <span data-lang="en" class="hidden">What Can You Customize?</span>
+                </h2>
+                <div class="features-grid">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">⌨️</div>
+                        <h3>
+                            <span data-lang="ja">キーのリマップ</span>
+                            <span data-lang="en" class="hidden">Key Remapping</span>
+                        </h3>
+                        <p>
+                            <span data-lang="ja">好きなキーを好きなキーに割り当て直せます。</span>
+                            <span data-lang="en" class="hidden">Remap any key to any other key.</span>
+                        </p>
+                        <div class="feature-media">
+                            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80" alt="Key Remap Example">
+                        </div>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">🗂️</div>
+                        <h3>
+                            <span data-lang="ja">レイヤー機能</span>
+                            <span data-lang="en" class="hidden">Layer Function</span>
+                        </h3>
+                        <p>
+                            <span data-lang="ja">Fnキーなどで別の配列に切り替え可能。</span>
+                            <span data-lang="en" class="hidden">Switch to another layout with Fn key, etc.</span>
+                        </p>
+                        <div class="feature-media">
+                            <video autoplay muted loop playsinline>
+                                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">🤝</div>
+                        <h3>
+                            <span data-lang="ja">コンボ</span>
+                            <span data-lang="en" class="hidden">Combo</span>
+                        </h3>
+                        <p>
+                            <span data-lang="ja">複数キー同時押しで新しいアクション。</span>
+                            <span data-lang="en" class="hidden">Trigger new actions with key combos.</span>
+                        </p>
+                        <div class="feature-media">
+                            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Combo Example">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 細かい使い方 Section -->
+        <section class="tutorial-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <span data-lang="ja">細かい使い方</span>
+                    <span data-lang="en" class="hidden">How to Use in Detail</span>
+                </h2>
+                <div class="steps">
+                    <!-- 基本的なカスタマイズ方法 -->
+                    <div class="step fade-in">
+                        <div class="step-content">
+                            <h3>
+                                <span data-lang="ja">基本的なカスタマイズ方法</span>
+                                <span data-lang="en" class="hidden">Basic Customization</span>
+                            </h3>
+                            <p class="step-description">
+                                <span data-lang="ja">まずは基本の設定方法を覚えましょう。</span>
+                                <span data-lang="en" class="hidden">Let's learn the basic settings first.</span>
+                            </p>
+                            <div class="accordion">
+                                <button class="accordion-toggle" data-target="howto-basic-details">
+                                    <span data-lang="ja">詳しく見る</span>
+                                    <span data-lang="en" class="hidden">See Details</span>
+                                    <span class="accordion-icon">+</span>
+                                </button>
+                                <div class="accordion-content" id="howto-basic-details">
+                                    <div class="accordion-inner">
+                                        <p>
+                                            <span data-lang="ja">ここに基本的なカスタマイズ方法の詳細な説明が入ります。実際の画面キャプチャや手順を詳しく解説します。</span>
+                                            <span data-lang="en" class="hidden">Here you will find a detailed explanation of the basic customization method, including screenshots and step-by-step instructions.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Macroタブ -->
+                    <div class="step fade-in">
+                        <div class="step-content">
+                            <h3>
+                                <span data-lang="ja">Macroタブ</span>
+                                <span data-lang="en" class="hidden">Macro Tab</span>
+                            </h3>
+                            <p class="step-description">
+                                <span data-lang="ja">マクロ機能で複雑な操作も簡単に。</span>
+                                <span data-lang="en" class="hidden">Easily perform complex operations with macros.</span>
+                            </p>
+                            <div class="accordion">
+                                <button class="accordion-toggle" data-target="howto-macro-details">
+                                    <span data-lang="ja">詳しく見る</span>
+                                    <span data-lang="en" class="hidden">See Details</span>
+                                    <span class="accordion-icon">+</span>
+                                </button>
+                                <div class="accordion-content" id="howto-macro-details">
+                                    <div class="accordion-inner">
+                                        <p>
+                                            <span data-lang="ja">ここにMacroタブの詳細な説明が入ります。マクロの作成方法や活用例を紹介します。</span>
+                                            <span data-lang="en" class="hidden">Here you will find a detailed explanation of the Macro tab, including how to create and use macros.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Device Editタブ -->
+                    <div class="step fade-in">
+                        <div class="step-content">
+                            <h3>
+                                <span data-lang="ja">Device Editタブ</span>
+                                <span data-lang="en" class="hidden">Device Edit Tab</span>
+                            </h3>
+                            <p class="step-description">
+                                <span data-lang="ja">デバイスごとに細かく設定可能。</span>
+                                <span data-lang="en" class="hidden">Customize settings for each device.</span>
+                            </p>
+                            <div class="accordion">
+                                <button class="accordion-toggle" data-target="howto-device-details">
+                                    <span data-lang="ja">詳しく見る</span>
+                                    <span data-lang="en" class="hidden">See Details</span>
+                                    <span class="accordion-icon">+</span>
+                                </button>
+                                <div class="accordion-content" id="howto-device-details">
+                                    <div class="accordion-inner">
+                                        <p>
+                                            <span data-lang="ja">ここにDevice Editタブの詳細な説明が入ります。デバイスごとのプロファイル管理や設定例を紹介します。</span>
+                                            <span data-lang="en" class="hidden">Here you will find a detailed explanation of the Device Edit tab, including profile management and examples for each device.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Remapタブ -->
+                    <div class="step fade-in">
+                        <div class="step-content">
+                            <h3>
+                                <span data-lang="ja">Remapタブ</span>
+                                <span data-lang="en" class="hidden">Remap Tab</span>
+                            </h3>
+                            <p class="step-description">
+                                <span data-lang="ja">キーの割り当てを自由自在に。</span>
+                                <span data-lang="en" class="hidden">Remap keys as you like.</span>
+                            </p>
+                            <div class="accordion">
+                                <button class="accordion-toggle" data-target="howto-remap-details">
+                                    <span data-lang="ja">詳しく見る</span>
+                                    <span data-lang="en" class="hidden">See Details</span>
+                                    <span class="accordion-icon">+</span>
+                                </button>
+                                <div class="accordion-content" id="howto-remap-details">
+                                    <div class="accordion-inner">
+                                        <p>
+                                            <span data-lang="ja">ここにRemapタブの詳細な説明が入ります。リマップの手順や応用例を紹介します。</span>
+                                            <span data-lang="en" class="hidden">Here you will find a detailed explanation of the Remap tab, including remapping steps and advanced usage.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Comboタブ -->
+                    <div class="step fade-in">
+                        <div class="step-content">
+                            <h3>
+                                <span data-lang="ja">Comboタブ</span>
+                                <span data-lang="en" class="hidden">Combo Tab</span>
+                            </h3>
+                            <p class="step-description">
+                                <span data-lang="ja">複数キーの組み合わせで新しい操作。</span>
+                                <span data-lang="en" class="hidden">New actions with key combinations.</span>
+                            </p>
+                            <div class="accordion">
+                                <button class="accordion-toggle" data-target="howto-combo-details">
+                                    <span data-lang="ja">詳しく見る</span>
+                                    <span data-lang="en" class="hidden">See Details</span>
+                                    <span class="accordion-icon">+</span>
+                                </button>
+                                <div class="accordion-content" id="howto-combo-details">
+                                    <div class="accordion-inner">
+                                        <p>
+                                            <span data-lang="ja">ここにComboタブの詳細な説明が入ります。コンボの設定方法や活用例を紹介します。</span>
+                                            <span data-lang="en" class="hidden">Here you will find a detailed explanation of the Combo tab, including how to set up and use combos.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- アプリごとのカスタマイズ -->
+                    <div class="step fade-in">
+                        <div class="step-content">
+                            <h3>
+                                <span data-lang="ja">アプリごとのカスタマイズ</span>
+                                <span data-lang="en" class="hidden">Per-App Customization</span>
+                            </h3>
+                            <p class="step-description">
+                                <span data-lang="ja">アプリごとに異なる設定を作成可能。</span>
+                                <span data-lang="en" class="hidden">Create different settings for each app.</span>
+                            </p>
+                            <div class="accordion">
+                                <button class="accordion-toggle" data-target="howto-app-details">
+                                    <span data-lang="ja">詳しく見る</span>
+                                    <span data-lang="en" class="hidden">See Details</span>
+                                    <span class="accordion-icon">+</span>
+                                </button>
+                                <div class="accordion-content" id="howto-app-details">
+                                    <div class="accordion-inner">
+                                        <p>
+                                            <span data-lang="ja">ここにアプリごとのカスタマイズの詳細な説明が入ります。アプリごとにプロファイルを切り替える方法などを紹介します。</span>
+                                            <span data-lang="en" class="hidden">Here you will find a detailed explanation of per-app customization, including how to switch profiles for each app.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>
+                <span data-lang="ja">© 2025 Stapler mini. All rights reserved.</span>
+                <span data-lang="en" class="hidden">© 2025 Stapler mini. All rights reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
